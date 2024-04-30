@@ -35,9 +35,9 @@ class AdminPanelProvider extends PanelProvider
             ->authGuard('web')
             ->collapsibleNavigationGroups()
             ->sidebarFullyCollapsibleOnDesktop()
-            ->brandName('BioGuard')
-            ->brandLogo(asset('images/Icons.jpg'))
-            ->darkModeBrandLogo(asset('images/Icons1.jpg'))
+            ->brandName('SiamDocuments')
+            ->brandLogo(asset('images/logo.png'))
+            ->darkModeBrandLogo(asset('images/logo.png'))
             ->brandLogoHeight('4rem')
             ->colors([
                 'danger' => Color::Rose,
@@ -55,7 +55,6 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,
