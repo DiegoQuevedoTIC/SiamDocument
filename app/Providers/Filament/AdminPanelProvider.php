@@ -17,6 +17,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Filament\Support\Enums\MaxWidth;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -25,10 +26,26 @@ class AdminPanelProvider extends PanelProvider
         return $panel
             ->default()
             ->id('admin')
-            ->path('admin')
+            ->path('')
             ->login()
+            ->passwordReset()
+            ->profile()
+            ->maxContentWidth(MaxWidth::ScreenExtraLarge)
+            ->font('Roboto')
+            ->authGuard('web')
+            ->collapsibleNavigationGroups()
+            ->sidebarFullyCollapsibleOnDesktop()
+            ->brandName('SiamDocuments')
+            ->brandLogo(asset('images/Icons.jpg'))
+            ->darkModeBrandLogo(asset('images/Icons1.jpg'))
+            ->brandLogoHeight('4rem')
             ->colors([
-                'primary' => Color::Amber,
+                'danger' => Color::Rose,
+                'gray' => Color::Gray,
+                'info' => Color::Blue,
+                'primary' => Color::Emerald,
+                'success' => Color::Red,
+                'warning' => Color::Orange,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
