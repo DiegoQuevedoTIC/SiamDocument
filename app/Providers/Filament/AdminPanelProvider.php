@@ -30,7 +30,7 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->passwordReset()
             ->profile()
-            ->maxContentWidth(MaxWidth::ScreenExtraLarge)
+            ->maxContentWidth(MaxWidth::ExtraLarge)
             ->font('Roboto')
             ->authGuard('web')
             ->collapsibleNavigationGroups()
